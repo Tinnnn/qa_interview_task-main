@@ -1,33 +1,27 @@
+import { loginPage, header } from '../support/pageObjects';
+import { validUser, lockedOutUser } from '../support/users';
+
 describe('Sauce Demo Login Page', () => {
-  beforeEach(() => {
-    cy.visit('/');
+ beforeEach(() => {
+    loginPage.visit();
   });
 
   it('should load the login screen successfully', () => {
-    cy.url().should('eq', 'https://www.saucedemo.com/');
-    
-    cy.get('[data-test="username"]').should('be.visible');
-    cy.get('[data-test="password"]').should('be.visible');
-    cy.get('[data-test="login-button"]').should('be.visible');
-    
-    cy.get('.login_logo').should('contain.text', 'Swag Labs');
-    
-    cy.get('.login_credentials_wrap').should('be.visible');
-    cy.get('.login_credentials_wrap').should('contain.text', 'Accepted usernames');
-    
-    cy.get('[data-test="username"]').should('have.attr', 'placeholder', 'Username');
-    cy.get('[data-test="password"]').should('have.attr', 'placeholder', 'Password');
-    
-    cy.get('[data-test="login-button"]').should('have.value', 'Login');
+    loginPage.assertLoginPageLoaded();
   });
 
   it('should display all login page elements', () => {
-    cy.get('.login_logo').should('be.visible');
-    
-    cy.get('.login_wrapper').within(() => {
-      cy.get('.login_wrapper-inner').should('be.visible');
-      cy.get('.form_column').should('be.visible');
-      cy.get('.login-box').should('be.visible');
-    });
+    loginPage.assertLoginPageElements();
+  });
+
+  it('should login successfully with valid credentials', () => {
+    loginPage.login(validUser.username, validUser.password);
+    loginPage.assertSuccessfulLogin();
+    header.logout();
+  });
+
+  it('should not login user with invalid credentials', () => {
+    loginPage.login(lockedOutUser.username, lockedOutUser.password);
+    loginPage.assertErrorMessage('Sorry, this user has been locked out.');
   });
 });

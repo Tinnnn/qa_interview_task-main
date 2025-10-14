@@ -7,6 +7,13 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    env: {
+      VALID_USERNAME: 'standard_user',
+      VALID_PASSWORD: 'secret_sauce',
+      LOCKEDOUT_USERNAME: 'locked_out_user',
+      LOCKEDOUT_PASSWORD: 'secret_sauce',
+    },
+    retries: 2,
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     supportFile: false,
     viewportWidth: 1280,
