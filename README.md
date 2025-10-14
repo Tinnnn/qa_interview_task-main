@@ -18,7 +18,7 @@ Please prepare and submit the following materials at least 1 day prior to the Ta
     - Identified bugs and areas of improvement for the target website
 2. Your Cypress automation test repository:
     - Either as an attached zip file, or
-    - A link to access the repository (e.g., GitHub, GitLab)
+    - A link to access the repository (e.g., GitHub, GitLab)¬
 
 Ensure all components are included in your submission for review.
 
