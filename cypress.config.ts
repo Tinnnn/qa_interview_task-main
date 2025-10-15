@@ -13,7 +13,10 @@ export default defineConfig({
       LOCKEDOUT_USERNAME: 'locked_out_user',
       LOCKEDOUT_PASSWORD: 'secret_sauce',
     },
-    retries: 2,
+    retries: {
+      runMode: 1, // Configure retry attempts for `cypress run`
+      openMode: 0, // Configure retry attempts for `cypress open`
+    },
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     supportFile: false,
     viewportWidth: 1280,

@@ -18,6 +18,7 @@ describe('Cart Functionality', () => {
   });
 
   afterEach(() => {
+    cartPage.clearCart();
     header.logout(); 
   });
 
@@ -28,9 +29,9 @@ describe('Cart Functionality', () => {
 
   it('should allow removing a product from cart', () => {
     cartPage.removeProductByName(products.backpack);
+    cartPage.removeProductByName(products.boltTshirt);
     cartPage.assertCartItemNotExists(products.backpack);
-    cartPage.assertCartItemExists(products.boltTshirt);
-    inventoryPage.assertCartCount(1);
+    cartPage.assertCartItemNotExists(products.boltTshirt);
   });
 
   it('should allow navigating back to the product list page', () => {

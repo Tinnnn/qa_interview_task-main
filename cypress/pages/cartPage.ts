@@ -1,29 +1,23 @@
 export class CartPage {
-  cartItem = '.cart_item';
-  cartItemName = '.inventory_item_name';
+  cartItem = '[data-test="inventory-item"]';
+  cartItemName = '[data-test="inventory-item-name"]';
   removeButton = '[data-test^="remove-"]';
   continueShoppingButton = '[data-test="continue-shopping"]';
   checkoutButton = '[data-test="checkout"]';
-  cartIcon = '.shopping_cart_link';
+  cartIcon = '[data-test="shopping-cart-link"]';
 
   assertCartItemExists(productName: string) {
-    cy.get(this.cartItem)
-      .contains(this.cartItemName, productName)
-      .should('be.visible');
+    cy.contains(this.cartItemName, productName).should('be.visible');
   }
 
   assertCartItemNotExists(productName: string) {
-    cy.get(this.cartItem)
-      .contains(this.cartItemName, productName)
-      .should('not.exist');
+    cy.contains(this.cartItemName, productName).should('not.exist');
   }
 
   removeProductByName(productName: string) {
-    cy.get(this.cartItem)
-      .contains(this.cartItemName, productName)
-      .parents(this.cartItem)
-      .find(this.removeButton)
-      .click();
+    cy.contains(this.cartItem, productName).within(() => {
+      cy.get(this.removeButton).click();
+    });
   }
 
   goBackToProducts() {
@@ -39,10 +33,20 @@ export class CartPage {
     cy.get(this.cartItem).should('exist');
   }
 
-  clearCart() {
+clearCart() {
   cy.get(this.cartIcon).click();
-  cy.get(this.cartItem).each(($item) => {
-    cy.wrap($item).find(this.removeButton).click();
+
+  // Check if there are items in the cart before attempting to clear
+  cy.get('body').then(($body) => {
+    if ($body.find(this.cartItem).length > 0) {
+      cy.get(this.cartItem).each(($item) => {
+        cy.wrap($item).within(() => {
+          cy.get(this.removeButton).click();
+        });
+      });
+    } else {
+      cy.log('Cart is already empty.');
+    }
   });
 }
 }

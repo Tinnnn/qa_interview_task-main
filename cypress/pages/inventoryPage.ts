@@ -1,13 +1,13 @@
 export class InventoryPage {
-  productList = '.inventory_list';
-  productItem = '.inventory_item';
-  productName = '.inventory_item_name';
-  productDesc = '.inventory_item_desc';
-  productPrice = '.inventory_item_price';
+  productList = '[data-test="inventory-list"]';
+  productItem = '[data-test="inventory-item"]';
+  productName = '[data-test="inventory-item-name"]';
+  productDesc = '[data-test="inventory-item-desc"]';
+  productPrice = '[data-test="inventory-item-price"]';
   addToCartButton = '[data-test^="add-to-cart"]';
   removeFromCartButton = '[data-test^="remove"]';
-  cartBadge = '.shopping_cart_badge';
-  cartIcon = '.shopping_cart_link';
+  cartBadge = '[data-test="shopping-cart-badge"]';
+  cartIcon = '[data-test="shopping-cart-link"]';
 
 
   assertInventoryPageLoaded() {
