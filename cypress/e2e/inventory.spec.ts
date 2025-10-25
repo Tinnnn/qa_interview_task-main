@@ -1,11 +1,10 @@
-import { loginPage, inventoryPage, cartPage, header } from '../pages';
+import { loginPage, inventoryPage, cartPage } from '../pages';
 import { validUser } from '../support/users';
 import products from '../fixtures/products.json';
 
 describe('Inventory Page Component Verification', () => {
   before(() => {
-    loginPage.visit();
-    loginPage.login(validUser.username, validUser.password);
+    cy.login(validUser.username, validUser.password);
   });
 
   it('should display list of products with name, price, and description', () => {
@@ -14,7 +13,7 @@ describe('Inventory Page Component Verification', () => {
   });
 
   after(() => {
-  header.logout();
+  cy.logout();
   });
 
 });
@@ -22,13 +21,12 @@ describe('Inventory Page Component Verification', () => {
 
 describe('Add to Cart Functionality', () => {
   beforeEach(() => {
-    loginPage.visit();
-    loginPage.login(validUser.username, validUser.password);
+    cy.login(validUser.username, validUser.password);
   });
 
     afterEach(() => {
     cartPage.clearCart();
-    header.logout();
+    cy.logout();
   });
   
   it('should add a product to the cart and change Add to cart button to Remove', () => {

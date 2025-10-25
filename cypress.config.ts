@@ -17,8 +17,8 @@ export default defineConfig({
       runMode: 1, // Configure retry attempts for `cypress run`
       openMode: 0, // Configure retry attempts for `cypress open`
     },
-    specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
-    supportFile: false,
+  specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
+  supportFile: 'cypress/support/commands.ts',
     viewportWidth: 1280,
     viewportHeight: 720,
     video: false,

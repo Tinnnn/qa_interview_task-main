@@ -1,4 +1,4 @@
-import { loginPage, header } from '../pages';
+import { loginPage } from '../pages';
 import { validUser, invalidUser } from '../support/users';
 
 describe('Sauce Demo Login Page', () => {
@@ -15,9 +15,8 @@ describe('Sauce Demo Login Page', () => {
   });
 
   it('should login successfully with valid credentials', () => {
-    loginPage.login(validUser.username, validUser.password);
-    loginPage.assertSuccessfulLogin();
-    header.logout();
+    cy.login(validUser.username, validUser.password);
+    cy.logout();
   });
 
   it('should not login user with invalid credentials', () => {

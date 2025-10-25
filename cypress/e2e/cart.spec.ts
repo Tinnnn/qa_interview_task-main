@@ -1,12 +1,10 @@
-import { loginPage, inventoryPage, cartPage, header } from '../pages';
+import { loginPage, inventoryPage, cartPage } from '../pages';
 import { validUser } from '../support/users';
 import products from '../fixtures/products.json';
 
 describe('Cart Functionality', () => {
   beforeEach(() => {
-    loginPage.visit();
-    loginPage.login(validUser.username, validUser.password);
-    loginPage.assertSuccessfulLogin();
+    cy.login(validUser.username, validUser.password);
 
     // Add products to cart
     inventoryPage.addProductToCartByName(products.backpack);
@@ -19,7 +17,7 @@ describe('Cart Functionality', () => {
 
   afterEach(() => {
     cartPage.clearCart();
-    header.logout(); 
+    cy.logout(); 
   });
 
   it('should display correct cart items', () => {
