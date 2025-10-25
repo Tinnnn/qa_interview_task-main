@@ -1,5 +1,5 @@
-import { loginPage, header } from '../support/pageObjects';
-import { validUser, lockedOutUser } from '../support/users';
+import { loginPage, header } from '../pages';
+import { validUser, invalidUser } from '../support/users';
 
 describe('Sauce Demo Login Page', () => {
  beforeEach(() => {
@@ -21,7 +21,7 @@ describe('Sauce Demo Login Page', () => {
   });
 
   it('should not login user with invalid credentials', () => {
-    loginPage.login(lockedOutUser.username, lockedOutUser.password);
-    loginPage.assertErrorMessage('Sorry, this user has been locked out.');
+    loginPage.login(invalidUser.username, invalidUser.password);
+    loginPage.assertErrorMessage('Username and password do not match any user in this service');
   });
 });

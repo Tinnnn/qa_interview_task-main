@@ -3,7 +3,7 @@ export const validUser = {
   password: Cypress.env('VALID_PASSWORD'),
 };
 
-export const lockedOutUser = {
-  username: Cypress.env('LOCKEDOUT_USERNAME'),
-  password: Cypress.env('LOCKEDOUT_PASSWORD'),
+export const invalidUser = {
+  username: Cypress.env('INVALID_USERNAME'),
+  password: Cypress.env('INVALID_PASSWORD'),
 };

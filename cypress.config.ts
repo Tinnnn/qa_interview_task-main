@@ -10,8 +10,8 @@ export default defineConfig({
     env: {
       VALID_USERNAME: 'standard_user',
       VALID_PASSWORD: 'secret_sauce',
-      LOCKEDOUT_USERNAME: 'locked_out_user',
-      LOCKEDOUT_PASSWORD: 'secret_sauce',
+      INVALID_USERNAME: 'invalid_user',
+      INVALID_PASSWORD: 'secret_sauce',
     },
     retries: {
       runMode: 1, // Configure retry attempts for `cypress run`

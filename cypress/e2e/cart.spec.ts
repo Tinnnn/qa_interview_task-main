@@ -1,4 +1,4 @@
-import { loginPage, inventoryPage, cartPage, header } from '../support/pageObjects';
+import { loginPage, inventoryPage, cartPage, header } from '../pages';
 import { validUser } from '../support/users';
 import products from '../fixtures/products.json';
 
