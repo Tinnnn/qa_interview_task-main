@@ -1,116 +1,127 @@
-Cypress E2E Automation Framework
+# 🚀 Cypress Automation Framework
 
-This repository contains a production-style End-to-End (E2E) test automation framework built with Cypress.
-It demonstrates modern QA automation practices, clean test architecture, and maintainable test design suitable for real-world applications.
+A **Cypress** automation framework demonstrating scalable architecture, maintainable test design, and real-world QA automation practices.
 
-The project reflects how I approach test automation in professional environments: scalable structure, readable tests, reusable logic, and reliable execution.
+This project showcases how I design and implement structured automation solutions suitable for professional environments.
 
-🚀 Overview
+---
 
-The framework validates core user workflows and UI functionality using Cypress best practices. It is designed to be:
+## 📌 Project Overview
 
-✅ Maintainable
+This repository demonstrates:
 
-✅ Scalable
+- Structured and scalable test architecture
+- Reusable custom commands
+- Test data management using fixtures
+- Clean separation of concerns
+- CI-ready execution
 
-✅ Easy to extend
+The framework is designed to be readable, maintainable, and easily extensible as test coverage grows.
 
-✅ CI-ready
+---
 
-✅ Recruiter-friendly and production-oriented
+## 🛠 Tech Stack
 
-This project highlights my ability to design structured automation solutions rather than just write isolated test scripts.
+- Cypress
+- TypeScript
+- Node.js
+- npm
 
-🧠 Technical Highlights
+---
 
-Cypress (E2E Testing)
+## 📁 Project Structure
 
-JavaScript-based test implementation
-
-Custom reusable commands
-
-Fixtures for test data management
-
-Clear separation of concerns
-
-Deterministic assertions
-
-Clean and readable test structure
-
-Headless and interactive execution support
-
-Configurable test environment
-
-📁 Project Structure
+```bash
 cypress/
-├── e2e/              # Test specifications (E2E scenarios)
-├── fixtures/         # Test data
-├── support/          # Custom commands & reusable logic
-│   ├── commands.js
-│   └── e2e.js
-cypress.config.js     # Cypress configuration
-package.json          # Dependencies & scripts
+├─ e2e/                 # E2E test specifications
+├─ fixtures/            # Test data files
+├─ support/             # Custom commands & reusable logic
+│  ├─ commands.ts
+│  └─ e2e.ts
+cypress.config.ts       # Cypress configuration
+package.json            # Project dependencies & scripts
+```
 
-Structure Philosophy
+---
 
-Tests focus on behavior
+## ⚙️ Installation
 
-Commands encapsulate reusable logic
+### 1️⃣ Clone the repository
 
-Fixtures manage external data
-
-Configuration is centralized
-
-This separation ensures scalability as test coverage grows.
-
-⚙️ Installation
-1️⃣ Clone the repository
+```bash
 git clone https://github.com/Tinnnn/qa_interview_task-main.git
 cd qa_interview_task-main/cypress
+```
 
-2️⃣ Install dependencies
+### 2️⃣ Install dependencies
+
+```bash
 npm install
+```
 
-▶️ Running Tests
-Open Cypress (Interactive Mode)
+---
+
+## ▶️ Running the Tests
+
+### Run in Interactive Mode
+
+```bash
 npx cypress open
+```
 
-Run Headlessly (CLI Mode)
+### Run in Headless Mode (CLI)
+
+```bash
 npx cypress run
+```
 
+Headless mode is suitable for CI/CD pipelines.
 
-This allows execution in CI pipelines or automated workflows.
+---
 
-🧪 Testing Approach
+## 🧪 Testing Strategy
 
-This framework demonstrates:
+The framework validates realistic user workflows and UI behaviors through:
 
-End-to-End workflow validation
+- Clear and descriptive test scenarios
+- Deterministic assertions
+- Minimal hard-coded values
+- Cypress built-in automatic waiting
+- Reusable commands to reduce duplication
 
-UI interaction testing
+---
 
-Assertion of expected system behavior
+## 🔍 Key Design Goals
 
-Stability through Cypress automatic waiting
+- Readable and maintainable test code
+- Scalable structure for growing coverage
+- Clean separation of concerns
+- Reduced duplication
+- CI-ready execution
+- Automation as living documentation
 
-Clear and meaningful test descriptions
+---
 
-Reduced duplication through reusable commands
+## 🔄 Scalability & Future Enhancements
 
-Tests are written to reflect realistic user journeys rather than isolated UI checks.
+This framework can be extended with:
 
-🔧 Design Principles
+- API testing integration
+- CI/CD workflows (GitHub Actions)
+- Cross-browser execution
+- Advanced reporting
+- Environment configuration handling
+- Page Object Model (if required by project scale)
 
-Readability over cleverness
+---
 
-Reusable abstractions
+## 💼 Portfolio Context
 
-Minimal hard-coded values
+This repository is part of my QA Automation portfolio and represents my approach to building structured, production-ready automation frameworks.
 
-Deterministic assertions
+I’m happy to discuss:
 
-Scalable structure
-
-Automation as documentation
-
-The goal is to build a framework that can evolve alongside a growing product.
+- Architectural decisions
+- Scalability considerations
+- Testing trade-offs
+- Production-level improvements
