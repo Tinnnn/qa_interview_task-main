@@ -1,111 +1,116 @@
-# QA Interview Task
-Welcome to the take-home task for the Quality Assurance Engineer role! This exercise is designed to give us a glimpse into your analytical skills, test case design approach, and automation capabilities.We believe in providing a clear and practical task that reflects the type of work you'll be doing with us, including both manual testing strategies and automated testing implementation.
+Cypress E2E Automation Framework
 
-## The Task
-Your assignment consists of three key components:
+This repository contains a production-style End-to-End (E2E) test automation framework built with Cypress.
+It demonstrates modern QA automation practices, clean test architecture, and maintainable test design suitable for real-world applications.
 
-1. Test Case Design: Identify and document no more than 10 test cases for the most critical user experience paths on https://www.saucedemo.com/
-2. Test Automation: Convert 3 - 5 of these test cases into automated Cypress tests
-3. Quality Analysis: Identify any bugs and areas of improvement you discover during your testing
+The project reflects how I approach test automation in professional environments: scalable structure, readable tests, reusable logic, and reliable execution.
 
-We are particularly interested in your rationale for selecting these specific test paths, your automation implementation approach, and your insights into the website's overall quality and user experience.
+🚀 Overview
 
-## Deliverables 
-Please prepare and submit the following materials at least 1 day prior to the Task Interview:
+The framework validates core user workflows and UI functionality using Cypress best practices. It is designed to be:
 
-1. A comprehensive document (PDF or text file) containing:
-    - Your documented test cases
-    - Identified bugs and areas of improvement for the target website
-2. Your Cypress automation test repository:
-    - Either as an attached zip file, or
-    - A link to access the repository (e.g., GitHub, GitLab)¬
+✅ Maintainable
 
-Ensure all components are included in your submission for review.
+✅ Scalable
 
-## Task Interview
-Our follow-up interview will be a collaborative session where we will implement additional documented test cases into the repository as automated tests. We'll also discuss the bugs and areas of improvement you identified during your testing. 
+✅ Easy to extend
 
-A link to book a slot for this follow-up session will be provided separately in an email.
+✅ CI-ready
 
-We're looking forward to reviewing your work!
+✅ Recruiter-friendly and production-oriented
 
----
-# Project Setup
-This project contains E2E tests for [https://www.saucedemo.com/](https://www.saucedemo.com/) using Cypress and TypeScript.
+This project highlights my ability to design structured automation solutions rather than just write isolated test scripts.
 
-## Prerequisites
+🧠 Technical Highlights
 
-- Node.js (v14 or higher)
-- npm
+Cypress (E2E Testing)
 
-## Installation
+JavaScript-based test implementation
 
-Install dependencies:
-```bash
+Custom reusable commands
+
+Fixtures for test data management
+
+Clear separation of concerns
+
+Deterministic assertions
+
+Clean and readable test structure
+
+Headless and interactive execution support
+
+Configurable test environment
+
+📁 Project Structure
+cypress/
+├── e2e/              # Test specifications (E2E scenarios)
+├── fixtures/         # Test data
+├── support/          # Custom commands & reusable logic
+│   ├── commands.js
+│   └── e2e.js
+cypress.config.js     # Cypress configuration
+package.json          # Dependencies & scripts
+
+Structure Philosophy
+
+Tests focus on behavior
+
+Commands encapsulate reusable logic
+
+Fixtures manage external data
+
+Configuration is centralized
+
+This separation ensures scalability as test coverage grows.
+
+⚙️ Installation
+1️⃣ Clone the repository
+git clone https://github.com/Tinnnn/qa_interview_task-main.git
+cd qa_interview_task-main/cypress
+
+2️⃣ Install dependencies
 npm install
-```
 
-## Running Tests
+▶️ Running Tests
+Open Cypress (Interactive Mode)
+npx cypress open
 
-### Interactive Mode (Cypress Test Runner)
-To open Cypress in interactive mode where you can see tests running in a browser:
-```bash
-npm run cypress:open
-```
-Then select E2E Testing and choose a browser to run the tests.
+Run Headlessly (CLI Mode)
+npx cypress run
 
-### Headless Mode (Command Line)
-To run all tests in headless mode:
-```bash
-npm test
-```
-or
-```bash
-npm run cypress:run
-```
 
-### Run Specific Test File
-To run a specific test file in headless mode:
-```bash
-npx cypress run --spec "cypress/e2e/login.spec.ts"
-```
+This allows execution in CI pipelines or automated workflows.
 
-## Project Structure
+🧪 Testing Approach
 
-```
-qa_interview_task/
-├── cypress/
-│   ├── e2e/
-│   │   └── login.spec.ts       # Login page test
-│   └── fixtures/               # Test data files
-├── cypress.config.ts           # Cypress configuration
-├bash
-├── package.json               # Project dependencies and scripts
-└── README.md                  # This file
-```
+This framework demonstrates:
 
-## Configuration
+End-to-End workflow validation
 
-The Cypress configuration is located in `cypress.config.ts` with the following key settings:
-- Base URL: https://www.saucedemo.com
-- Viewport: 1280x720
-- Default timeouts: 10 seconds
-- Screenshots on failure: Enabled
-- Video recording: Disabled
+UI interaction testing
 
-## Writing New Tests
+Assertion of expected system behavior
 
-To add new tests:
-1. Create a new `.spec.ts` file in the `cypress/e2e/` directory
-2. Follow the existing test structure using TypeScript
-3. Use Cypress commands and assertions to interact with and verify page elements
+Stability through Cypress automatic waiting
 
-Example:
-```typescript
-describe('Test Suite Name', () => {
-  it('should do something', () => {
-    cy.visit('/');
-    cy.get('selector').should('be.visible');
-  });
-});
-```
+Clear and meaningful test descriptions
+
+Reduced duplication through reusable commands
+
+Tests are written to reflect realistic user journeys rather than isolated UI checks.
+
+🔧 Design Principles
+
+Readability over cleverness
+
+Reusable abstractions
+
+Minimal hard-coded values
+
+Deterministic assertions
+
+Scalable structure
+
+Automation as documentation
+
+The goal is to build a framework that can evolve alongside a growing product.
